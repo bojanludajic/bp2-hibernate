@@ -1,0 +1,14 @@
+package crud;
+
+import java.math.BigDecimal;
+
+import model.Avlasnik;
+import model.Azgrada;
+
+public class StanCrud {
+	
+	public static void insertStan(Avlasnik v, Azgrada z, BigDecimal broj, BigDecimal kvadratura, BigDecimal sprat) {
+		
+	}
+
+}

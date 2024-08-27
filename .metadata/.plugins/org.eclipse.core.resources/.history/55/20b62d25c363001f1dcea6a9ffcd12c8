@@ -1,0 +1,12 @@
+package crud;
+
+import model.Azgrada;
+
+public class ZgradaCrud {
+
+	
+	public static List<Azgrada> listZgrade() {
+		
+	}
+	
+}

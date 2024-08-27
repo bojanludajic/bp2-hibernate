@@ -1,0 +1,27 @@
+package crud;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import model.Azgrada;
+import utils.PersistenceUtil;
+
+public class ZgradaCrud {
+
+	
+	public static List<Azgrada> listZgrade() {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		String s = "Select z from Azgrada z";
+		Query q = em.createQuery(s);
+		List<Azgrada> zgrade = q.getResultList();
+		em.close();
+		return zgrade;
+	}
+	
+	public static boolean deleteZgrada(Azgrada z) {
+		
+	}
+	
+}

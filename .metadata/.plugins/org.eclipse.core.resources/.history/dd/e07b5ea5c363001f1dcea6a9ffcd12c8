@@ -1,0 +1,85 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.List;
+
+
+/**
+ * The persistent class for the AZGRADA database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Azgrada.findAll", query="SELECT a FROM Azgrada a")
+public class Azgrada implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@SequenceGenerator(name="AZGRADA_IDZ_GENERATOR", sequenceName="AZGRADA_PK")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AZGRADA_IDZ_GENERATOR")
+	private long idz;
+
+	private BigDecimal broj;
+
+	private String ulica;
+
+	//bi-directional many-to-one association to Astan
+	@OneToMany(mappedBy="azgrada")
+	private List<Astan> astans;
+
+	public Azgrada() {
+	}
+
+	public long getIdz() {
+		return this.idz;
+	}
+
+	public void setIdz(long idz) {
+		this.idz = idz;
+	}
+
+	public BigDecimal getBroj() {
+		return this.broj;
+	}
+
+	public void setBroj(BigDecimal broj) {
+		this.broj = broj;
+	}
+
+	public String getUlica() {
+		return this.ulica;
+	}
+
+	public void setUlica(String ulica) {
+		this.ulica = ulica;
+	}
+
+	public List<Astan> getAstans() {
+		return this.astans;
+	}
+
+	public void setAstans(List<Astan> astans) {
+		this.astans = astans;
+	}
+
+	public Astan addAstan(Astan astan) {
+		getAstans().add(astan);
+		astan.setAzgrada(this);
+
+		return astan;
+	}
+
+	public Astan removeAstan(Astan astan) {
+		getAstans().remove(astan);
+		astan.setAzgrada(null);
+
+		return astan;
+	}
+	
+	@Override
+	public String toString() {
+		return this.ime + " " + prezime;
+	}
+
+}

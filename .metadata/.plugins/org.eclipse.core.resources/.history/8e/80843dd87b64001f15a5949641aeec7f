@@ -1,0 +1,62 @@
+package crud;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
+
+import model.Astan;
+import model.Avlasnik;
+import utils.PersistenceUtil;
+
+public class VlasnikCrud {
+
+	public static void insertVlasnik(String ime, String prezime, String brtel) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		EntityTransaction et = null;
+		try {
+			et = em.getTransaction();
+			et.begin();
+			
+			Avlasnik v = new Avlasnik();
+			v.setIme(ime);
+			v.setPrezime(prezime);
+			v.setBrtel(brtel);
+			
+			em.persist(v);
+			
+			em.flush();
+			et.commit();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			if(et != null && et.isActive()) {
+				et.rollback();
+			}
+		} finally {
+			if(em != null && em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+	
+	public static List<Avlasnik> listVlasnici() {
+		String s = "select v from Avlasnik v";
+		EntityManager em = PersistenceUtil.getEntityManager();
+		Query q = em.createQuery(s);
+		List<Avlasnik> vlasnici = q.getResultList();
+		em.close();
+		return vlasnici;
+	}
+	
+	public static List<Astan> stanoviVlasnika(Avlasnik v) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		String s = "Select v from Avlasnik v join fetch v.astans s where v=:x";
+		Query q = em.createQuery(s);
+		q.setParameter("x", v);
+		Avlasnik vl = (Avlasnik) q.getSingleResult();
+		em.close();
+		return vl.getAstans();
+	}
+	
+}

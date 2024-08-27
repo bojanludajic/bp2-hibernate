@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="JPAVezbe" transaction-type="RESOURCE_LOCAL">
+		<class>model.Astan</class>
+		<class>model.AstanPK</class>
+		<class>model.Avlasnik</class>
+		<class>model.Azgrada</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@nastava.is.pmf.uns.ac.rs:1521/baze2"/>
+			<property name="javax.persistence.jdbc.user" value="baze2"/>
+			<property name="javax.persistence.jdbc.password" value="baze2"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,21 @@
+INDEX VERSION 1.134+C:\Users\bojan\Desktop\BP2K2\JPAVezbanje\.metadata\.plugins\org.eclipse.jdt.core
+3536396445.index
+1303456026.index
+1865797976.index
+2619000239.index
+5117854.index
+1158504111.index
+2634765946.index
+3926624519.index
+4156639700.index
+110182928.index
+2324195369.index
+2255995683.index
+2772239545.index
+761412574.index
+2484917681.index
+3676846429.index
+1259208848.index
+3202724809.index
+163053500.index
+3423032339.index

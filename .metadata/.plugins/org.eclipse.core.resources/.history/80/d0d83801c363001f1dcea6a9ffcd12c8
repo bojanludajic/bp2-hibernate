@@ -1,0 +1,10 @@
+package crud;
+
+public class ZgradaCrud {
+
+	
+	public static List<Azgrada> listZgrade() {
+		
+	}
+	
+}
