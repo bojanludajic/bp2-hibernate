@@ -54,7 +54,8 @@ public class UnosStana extends JDialog {
 	 * Create the dialog.
 	 */
 	public UnosStana() {
-		setBounds(100, 100, 450, 300);
+		setTitle("Unos stana");
+		setBounds(100, 100, 418, 272);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);

@@ -42,6 +42,7 @@ public class StanoviVlasnika extends JDialog {
 	 * Create the dialog.
 	 */
 	public StanoviVlasnika() {
+		setTitle("Stanovi vlasnika");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

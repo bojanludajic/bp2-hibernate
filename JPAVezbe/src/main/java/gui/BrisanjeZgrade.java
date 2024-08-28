@@ -16,6 +16,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class BrisanjeZgrade extends JDialog {
 
@@ -41,7 +42,8 @@ public class BrisanjeZgrade extends JDialog {
 	 * Create the dialog.
 	 */
 	public BrisanjeZgrade() {
-		setBounds(100, 100, 450, 300);
+		setTitle("Brisanje zgrade");
+		setBounds(100, 100, 450, 227);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -50,8 +52,12 @@ public class BrisanjeZgrade extends JDialog {
 		zgradaCB = new JComboBox();
 		List<Azgrada> zgrade = zc.listZgrade();
 		zgrade.forEach(it -> zgradaCB.addItem(it));
-		zgradaCB.setBounds(91, 97, 245, 22);
+		zgradaCB.setBounds(136, 48, 245, 22);
 		contentPanel.add(zgradaCB);
+		
+		JLabel lblNewLabel = new JLabel("Zgrada za brisanje:");
+		lblNewLabel.setBounds(10, 52, 116, 14);
+		contentPanel.add(lblNewLabel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -84,5 +90,4 @@ public class BrisanjeZgrade extends JDialog {
 			}
 		}
 	}
-
 }

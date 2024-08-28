@@ -34,6 +34,7 @@ public class MainPage extends JFrame {
 	 * Create the frame.
 	 */
 	public MainPage() {
+		setTitle("Upravljanje stanovima");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -49,7 +50,7 @@ public class MainPage extends JFrame {
 				uv.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(128, 31, 168, 23);
+		btnNewButton.setBounds(104, 25, 222, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Unos stana");
@@ -59,7 +60,7 @@ public class MainPage extends JFrame {
 				us.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(128, 63, 168, 23);
+		btnNewButton_1.setBounds(104, 81, 222, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("Prikaz stanova po vlasniku");
@@ -69,7 +70,7 @@ public class MainPage extends JFrame {
 				sv.setVisible(true);
 			}
 		});
-		btnNewButton_1_1.setBounds(128, 129, 168, 23);
+		btnNewButton_1_1.setBounds(104, 193, 222, 23);
 		contentPane.add(btnNewButton_1_1);
 		
 		JButton btnBrisanjeZgrade = new JButton("Brisanje zgrade");
@@ -79,7 +80,7 @@ public class MainPage extends JFrame {
 				bz.setVisible(true);
 			}
 		});
-		btnBrisanjeZgrade.setBounds(128, 97, 168, 23);
+		btnBrisanjeZgrade.setBounds(104, 137, 222, 23);
 		contentPane.add(btnBrisanjeZgrade);
 	}
 }

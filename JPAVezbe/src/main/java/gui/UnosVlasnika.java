@@ -40,6 +40,7 @@ public class UnosVlasnika extends JDialog {
 	 * Create the dialog.
 	 */
 	public UnosVlasnika() {
+		setTitle("Unos vlasnika");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
